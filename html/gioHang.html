@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABBY's Mart - Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/gioHang.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <a href="home.html">
+        <img src="/images/abydos.png" alt="Logo" width="50">
+        <span>HomeTech</span>
+      </a>
+    </div>
+    <nav class="header-navbar">
+      <ul>
+        <li><a href="../html/home.html">Home</a></li>
+        <li><a href="">Products</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-info">
+      <i class="fa fa-search"></i>
+      <a class="cart" href="">
+        <p class="cart-item">0</p>
+        <i class="fa fa-shopping-bag"></i>
+      </a>
+      <a class="header-account" href="dangNhap.html">
+        <i class="fa fa-user"></i>
+        <p id="accountname">Đăng nhập</p>
+      </a>
+    </div>
+  </header>
+
+  <!-- Cart -->
+  <div class="containerz">
+    <div class="cart-container"></div>
+    <div class="cart-summary"></div>
+  </div>
+
+  <!-- Modal thanh toán -->
+  <div class="modal fade" id="modalThanhToanThanhCong" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="modalLabel">Thông báo</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Đóng"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fs-5 fw-bold">Thanh toán thành công!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/dangNhapChung.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

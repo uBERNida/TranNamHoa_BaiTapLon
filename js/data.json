@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "title": "Nồi cơm điện thông minh XYZ",
+        "description": "Nồi cơm điện thông minh XYZ với công nghệ nấu AI giúp cơm luôn chín đều, thơm ngon. Tích hợp 10 chế độ nấu như nấu cháo, làm bánh, hấp thực phẩm. Màn hình cảm ứng LED dễ sử dụng và vệ sinh.",
+        "price": 1990000,
+        "img": "../images/noicom.jpg",
+        "category": "Thiết bị nhà bếp",
+        "rating": "★★★★★",
+        "sale": 15
+    },
+    {
+        "id": 2,
+        "title": "Máy lọc không khí ABC",
+        "description": "Máy lọc không khí ABC sử dụng bộ lọc HEPA và than hoạt tính, loại bỏ tới 99.97% bụi mịn PM2.5 và vi khuẩn. Vận hành êm ái, phù hợp cho phòng ngủ và phòng làm việc. Có cảm biến chất lượng không khí theo thời gian thực.",
+        "price": 3490000,
+        "img": "../images/maylockongkhi.jpg",
+        "category": "Thiết bị phòng khách",
+        "rating": "★★★"
+    },
+    {
+        "id": 3,
+        "title": "Robot hút bụi lau nhà DEF",
+        "description": "Robot hút bụi lau nhà DEF có khả năng vừa hút vừa lau, định vị thông minh bằng laser, tránh chướng ngại vật hiệu quả. Hỗ trợ điều khiển từ xa qua app, lên lịch dọn dẹp tự động. Pin dùng tới 120 phút/lần sạc.",
+        "price": 7990000,
+        "img": "../images/robothutbui_new.jpg",
+        "category": "Đồ gia dụng thông minh",
+        "rating": "★★★★★",
+        "sale": 20
+    },
+    {
+        "id": 4,
+        "title": "Máy giặt cửa ngang Inverter JKL",
+        "description": "Máy giặt tiết kiệm điện năng với công nghệ Inverter, tích hợp chế độ giặt hơi nước diệt khuẩn 99.9%, phù hợp cho gia đình có trẻ nhỏ.",
+        "price": 8750000,
+        "img": "../images/maygiat_new.jpg",
+        "category": "Thiết bị giặt là",
+        "rating": "★★★★☆"
+    },
+    {
+        "id": 5,
+        "title": "Máy sấy quần áo thông minh MNO",
+        "description": "Sấy khô nhanh, không làm nhăn vải. Công nghệ cảm biến tự điều chỉnh thời gian sấy. Thiết kế nhỏ gọn, phù hợp không gian chật.",
+        "price": 5990000,
+        "img": "../images/maygiat_5.jpg",
+        "category": "Thiết bị giặt là",
+        "rating": "★★★★"
+    },
+    {
+        "id": 6,
+        "title": "Máy giặt kiêm sấy PQR 10kg",
+        "description": "Máy giặt kết hợp sấy khô, dung tích lớn 10kg, vận hành êm ái, chống rung lắc. Giao diện cảm ứng hiện đại, dễ sử dụng.",
+        "price": 10290000,
+        "img": "../images/maygiat_6.jpg",
+        "category": "Thiết bị giặt là",
+        "rating": "★★★★★",
+        "sale": 10
+    },
+    {
+        "id": 7,
+        "title": "Máy giặt mini dành cho đồ trẻ em STU",
+        "description": "Giải pháp lý tưởng cho các gia đình có em bé. Máy giặt mini với chế độ giặt nhẹ, không làm hư vải. Tiết kiệm nước và điện.",
+        "price": 3150000,
+        "img": "../images/maygiat_7.jpg",
+        "category": "Thiết bị giặt là",
+        "rating": "★★★☆"
+    },
+    {
+        "id": 8,
+        "title": "Máy giặt lồng đứng UV Wash VWX",
+        "description": "Máy giặt lồng đứng công nghệ UV khử khuẩn, giặt mạnh mẽ mà không làm hại sợi vải. Chế độ hẹn giờ tiện lợi.",
+        "price": 7290000,
+        "img": "../images/maygiat_8.jpg",
+        "category": "Thiết bị giặt là",
+        "rating": "★★★★☆"
+    }
+    
+]
