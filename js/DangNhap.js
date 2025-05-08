@@ -59,74 +59,88 @@
 
 
   // Đăng ký
-  const registerForm = document.getElementById('registerForm');
-  registerForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+const registerForm = document.getElementById('registerForm');
+registerForm.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    const email = document.getElementById('regEmail').value.trim();
-    const password = document.getElementById('regPassword').value.trim();
-    const confirmPassword = document.getElementById('regConfirmPassword').value.trim();
+  const fullName = document.getElementById('regFullName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const password = document.getElementById('regPassword').value.trim();
+  const confirmPassword = document.getElementById('regConfirmPassword').value.trim();
 
-    const emailError = document.getElementById('regEmailError');
-    const passwordError = document.getElementById('regPasswordError');
-    const confirmPasswordError = document.getElementById('regConfirmPasswordError');
+  const fullNameError = document.getElementById('regFullNameError');
+  const emailError = document.getElementById('regEmailError');
+  const passwordError = document.getElementById('regPasswordError');
+  const confirmPasswordError = document.getElementById('regConfirmPasswordError');
 
-    emailError.textContent = "";
-    passwordError.textContent = "";
-    confirmPasswordError.textContent = "";
+  fullNameError.textContent = "";
+  emailError.textContent = "";
+  passwordError.textContent = "";
+  confirmPasswordError.textContent = "";
 
-    let isValid = true;
+  let isValid = true;
 
-    if (!email) {
-  emailError.textContent = "Email không được để trống";
-  isValid = false;
-} else {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    emailError.textContent = "Email không hợp lệ";
+  // Kiểm tra họ tên
+  if (!fullName) {
+    fullNameError.textContent = "Họ và tên không được để trống";
     isValid = false;
   } else {
-    // Kiểm tra trùng email trong localStorage
-    let users = JSON.parse(localStorage.getItem("users") || "{}");
-    if (users[email]) {
-      emailError.textContent = "Email đã được sử dụng";
+    const namePattern = /^([A-Z][a-z]*)(\s[A-Z][a-z]*)+$/;
+    if (!namePattern.test(fullName)) {
+      fullNameError.textContent = "Họ tên phải viết hoa chữ cái đầu mỗi từ và không chứa số";
       isValid = false;
     }
   }
-}
-  
-    if (!password) {
-      passwordError.textContent = "Mật khẩu không được để trống";
-      isValid = false;
-    }
 
-    if (password && confirmPassword !== password) {
-      confirmPasswordError.textContent = "Mật khẩu nhập lại không khớp";
+  // Kiểm tra email
+  if (!email) {
+    emailError.textContent = "Email không được để trống";
+    isValid = false;
+  } else {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      emailError.textContent = "Email không hợp lệ";
       isValid = false;
-    }
-
-    if (isValid) {
-      // Lưu dữ liệu vào localStorage
+    } else {
       let users = JSON.parse(localStorage.getItem("users") || "{}");
       if (users[email]) {
         emailError.textContent = "Email đã được sử dụng";
-        return;
+        isValid = false;
       }
-
-      users[email] = password;
-      localStorage.setItem("users", JSON.stringify(users));
-
-      // Ẩn modal đăng ký
-      const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-      registerModal.hide();
-
-      // Tự động mở lại modal đăng nhập, điền sẵn email
-      const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-      document.getElementById('email').value = email;
-      document.getElementById('password').value = "";
-      loginModal.show();
     }
-  });
+  }
+
+  // Kiểm tra mật khẩu
+  if (!password) {
+    passwordError.textContent = "Mật khẩu không được để trống";
+    isValid = false;
+  }
+
+  if (password && confirmPassword !== password) {
+    confirmPasswordError.textContent = "Mật khẩu nhập lại không khớp";
+    isValid = false;
+  }
+
+  if (isValid) {
+    let users = JSON.parse(localStorage.getItem("users") || "{}");
+    users[email] = {
+      password: password,
+      fullName: fullName
+    };
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // Ẩn modal đăng ký
+    const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+    registerModal.hide();
+
+    // Tự động mở lại modal đăng nhập, điền sẵn email
+    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    document.getElementById('email').value = email;
+    document.getElementById('password').value = "";
+    loginModal.show();
+  }
+});
+
 
   // Show mail đăng nhập
   function showLoggedInUser(email) {
