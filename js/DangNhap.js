@@ -78,15 +78,22 @@
     let isValid = true;
 
     if (!email) {
-      emailError.textContent = "Email không được để trống";
+  emailError.textContent = "Email không được để trống";
+  isValid = false;
+} else {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    emailError.textContent = "Email không hợp lệ";
+    isValid = false;
+  } else {
+    // Kiểm tra trùng email trong localStorage
+    let users = JSON.parse(localStorage.getItem("users") || "{}");
+    if (users[email]) {
+      emailError.textContent = "Email đã được sử dụng";
       isValid = false;
-    } else {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        emailError.textContent = "Email không hợp lệ";
-        isValid = false;
-      }
     }
+  }
+}
   
     if (!password) {
       passwordError.textContent = "Mật khẩu không được để trống";
