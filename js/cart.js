@@ -93,8 +93,17 @@ const bindEvents = () => {
   const btnThanhToan = document.getElementById("btnThanhToan");
   if (btnThanhToan) {
     btnThanhToan.addEventListener("click", () => {
+      // Hiển thị modal
       const modal = new bootstrap.Modal(document.getElementById("modalThanhToanThanhCong"));
       modal.show();
+
+      // Xóa giỏ hàng
+      cart = [];
+      localStorage.setItem("cart", JSON.stringify(cart));
+      
+      // Cập nhật giao diện
+      renderCartItem();
+      totalProduct();
     });
   }
 
