@@ -22,10 +22,10 @@ const renderCartItem = async () => {
             <input type="number" min="0" value="${itemCart.count}" id="${search.id}" onchange="update(${search.id})">
           </div>
           <div class="cart-price">
-            <h4>$${search.price}</h4>
+            <h4>${search.price.toLocaleString("vi-VN")} VNĐ</h4>
           </div>
           <div class="cart-total">
-            <h4>$${(search.price * itemCart.count).toLocaleString()}</h4>
+            <h4>${(search.price * itemCart.count).toLocaleString("vi-VN")} VNĐ</h4>
           </div>
           <div class="cart-remove">
             <button onclick="removeItem(${search.id})">Remove</button>
@@ -71,7 +71,7 @@ const totalProduct = async () => {
 
     cartSummary.innerHTML = `
       <div class="product-total">
-        <h2>Total Product: <span id="total">$${total.toLocaleString()}</span></h2>
+        <h2>Tổng tiền: <span id="total">${total.toLocaleString("vi-VN")} VNĐ</span></h2>
       </div>
       <div class="product-checkout mt-3">
         <button type="button" class="btn btn-success" id="btnThanhToan">Thanh toán</button> 
